@@ -1,0 +1,80 @@
+ 
+START
+
+PROGRAM_RUNNING = True 
+ROUND_RUNNING = True
+deal_to_player = True
+
+
+
+print out the game info and title
+while PROGRAM_RUNNING is True:
+    prompt player to start round
+    
+    while ROUND_RUNNING is True:
+        
+        if deal_to_player :
+             dealer deals out cards to itself and the player
+             prints  the card values to be shown
+        
+        else:
+            computer deals itself and prints current cards
+
+        print cards and total  excluding the one not to be revealed
+
+        if player_total > 21:
+            	LOST RESULT
+            	ROUND_RUNNING = False
+            	END WHILE LOOP
+        if player has blackjack:
+
+            if player has blackjack and dealer has blackjack:
+                DRAW RESULT
+                ROUND_RUNNING = False
+                END WHILE LOOP
+            else:
+                WIN RESULT
+                ROUND_RUNNING = False
+                END WHILE LOOP
+        else :
+            if dealer_total > 16:
+                if dealer_total is equal to player_total:
+                    DRAW RESULT
+                    END WHILE LOOP
+                if dealer has blackjack and player has blackjack:
+                    DRAW RESULT
+                    ROUND_RUNNING = False
+                 	END WHILE LOOP
+                if dealer_total > player_total:
+                    LOST RESULT
+                    ROUND_RUNNING = False
+                    END WHILE LOOP
+                else:
+                    WIN RESULT
+                    ROUND_RUNNING = False
+                    END WHILE LOOP
+            
+            else:
+                if user wants to keep drawing cards:
+                    deal_to_player = True
+                    CONTINUE LOOP
+                else:
+                    deal_to_player = False
+                    CONTINUE LOOP
+
+    print out results and all cards 
+
+    if player wants to continue playing:
+        CONTINUE LOOP
+
+    else:
+        PROGRAM_RUNNING = False 
+        END WHILE LOOP            
+                
+                
+
+            
+
+    
+            
+ 
