@@ -37,6 +37,12 @@ RESULT = ""
 DECK = [11, 2,3,4,5,6,7,8,9,10,10,10,10]
 
 def AdjustAceValue(hand):
+	'''
+	args : hand -> list 
+
+	return : list
+	'''
+	
 	# if an ace(11) in the deck and the value is over 21
 	# the ace is set to a value of 1 
 	if not sum(hand) > 21:
@@ -48,6 +54,10 @@ def AdjustAceValue(hand):
 
 
 def IsBlackJack(hand):
+	'''
+	args 		: hand -> list 
+
+	return 	: Bool'''
 	# hand is a ist of cards of a user
 	# True if blackjack else False 
 
@@ -57,6 +67,8 @@ def IsBlackJack(hand):
 
 
 def YesOrNo(message = ""):
+	# displays the [message] parameter and
+	# asks a user for a yes or no choice
 	while True:
 		choice = input(message + " \n  [y] for yes |  [N] for no \n")
 		c = choice.lower()
@@ -67,6 +79,10 @@ def YesOrNo(message = ""):
 
 
 def DealHand(hand):
+	'''
+	args 		: hand -> list 
+
+	return 	: None'''
 	# add a random card to the hand
 
 	if hand == []:
@@ -77,21 +93,23 @@ def DealHand(hand):
 		hand.append(random.choice(DECK))
 
 
-print("~"*10 ,"\n")
 
 
 def PlayGame():
-	print(INTRO)
+
+	# main game function
+	print(INTRO) # print out the introduction 
 	DEAL_PLAYER = True
 
 	while PROGRAM_RUNNNING:
+		# main loop 
 		print("  -- STARTING NEW GAME --" )	
-		input("click ENTER  to start ")
+		input("     |   click ENTER  to start  |  ")
 		player_hand = []
 		dealer_hand = [] 
 		ROUND_COUNT = 0
 		while ROUND_RUNNING:
-			 
+			# round loop
 
 			if DEAL_PLAYER:
 				DealHand(player_hand)
